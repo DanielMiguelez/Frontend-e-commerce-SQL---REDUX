@@ -17,13 +17,15 @@ export const register = createAsyncThunk("/auth/register", async (user) => {
     }
 })
 
-export const login = createAsyncThunk("/auth/login", async (user) => {
+export const login = createAsyncThunk("auth/login", async (user) => {
     try {
-        return await authService.login(user)
+      const user = await authService.login(user);
+      localStorage.setItem("user", JSON.stringify(user)); // Guardar en localStorage
+      return user;
     } catch (error) {
-        console.error(error)
+      console.error(error)
     }
-})
+  });
 
 export const logout = createAsyncThunk("/auth/logout", async()=>{
     try {

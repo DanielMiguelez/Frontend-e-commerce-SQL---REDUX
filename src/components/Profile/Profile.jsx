@@ -12,9 +12,9 @@ const Profile = () => {
   return (
      <div>
       <h1>Profile</h1>
-      <p>{user?.user.name}</p>
-      <p>{user?.user.email}</p>
-      <p>{user?.user.id}</p>
+      <p>{user.user?.name}</p>
+      <p>{user.user?.email}</p>
+      <p>{user?.user?.id}</p>
     </div>
   )
 }

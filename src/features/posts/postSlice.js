@@ -32,6 +32,14 @@ export const getPostByTitle = createAsyncThunk("posts/getPostByTitle", async(tit
     }
 })
 
+export const destroyPostById = createAsyncThunk("posts/destroyPostById", async(id)=>{
+    try {
+        return await postsService.destroyPostById(id)
+    } catch (error) {
+        console.error(error)
+    }
+})
+
 
 export const postSlice = createSlice({
     name:"posts",
@@ -56,6 +64,9 @@ export const postSlice = createSlice({
             })
             .addCase(getPostByTitle.fulfilled, (state, action) =>{
                 state.posts = action.payload;
+            })
+            .addCase(destroyPostById.fulfilled, (state, action)=>{
+                state.posts = state.posts.filter(post=> post.id !== +action.payload.id)
             })
     }
 })

@@ -35,6 +35,9 @@ const Header = () => {
       
       <Link to ="/home">Home</Link>
       <input onKeyUp={handleChange} placeholder='search' name = "text"/>
+
+      {user?.user?.role === 'admin' ? <span><Link to ="/admin">Admin</Link></span>:''}
+
     {user ? 
       <>
       <Link to ="/profile">Profile</Link>
