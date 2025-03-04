@@ -1,0 +1,21 @@
+.header{
+    background-color: rgb(106, 106, 171);
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    gap: 10px;
+}
+
+a{
+    all:unset
+}
+
+a:hover{
+    color: yellow;
+}
+
+input{
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgb(255, 0, 21);
+}
